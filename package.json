@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "NODE_ENV=mocha istanbul cover _mocha -- --compilers js:babel-core/register",
-    "compile": "babel -d lib/ src/",
+    "compile": "NODE_ENV=prod:compile babel -d lib/ src/",
     "prepublish": "npm run compile",
     "test:watch": "NODE_ENV=mocha mocha --compilers js:babel-core/register --require ./test/helper.js --watch"
   },

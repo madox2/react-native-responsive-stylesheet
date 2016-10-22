@@ -3,7 +3,7 @@ const sinon = require('sinon')
 
 describe('index', () => {
 
-  const sheet = require('../sheet')
+  const sheet = require('../src/sheet')
   const stylesheet = 'stylesheet_object'
   const factory = () => stylesheet
 
@@ -16,13 +16,13 @@ describe('index', () => {
   })
 
   it('should export factory function', () => {
-    const make = require('../index').makeStyleSheet
+    const make = require('../src/index').makeStyleSheet
     make.should.be.a.function
     make().should.equal(stylesheet)
   })
 
   it('should export global stylesheet', () => {
-    const rss = require('../index').ResponsiveStyleSheet
+    const rss = require('../src/index').ResponsiveStyleSheet
     rss.should.equal(stylesheet)
   })
 

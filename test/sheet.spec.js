@@ -1,6 +1,6 @@
 require('chai').should()
 const sinon = require('sinon')
-const { makeSheet } = require('../sheet')
+const { makeSheet } = require('../src/sheet')
 
 describe('sheet', () => {
 

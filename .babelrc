@@ -2,6 +2,9 @@
   "env": {
     "mocha": {
       "presets": [ "es2015" ]
+    },
+    "prod:compile": {
+      "presets": [ "es2015" ]
     }
   }
 }
