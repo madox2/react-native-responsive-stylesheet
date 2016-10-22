@@ -2,9 +2,11 @@
   "name": "react-native-responsive-stylesheet",
   "version": "0.1.0",
   "description": "Utility for building responsive styles for react native",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "NODE_ENV=mocha istanbul cover _mocha -- --compilers js:babel-core/register",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
     "test:watch": "NODE_ENV=mocha mocha --compilers js:babel-core/register --require ./test/helper.js --watch"
   },
   "author": "madox2",
@@ -17,7 +19,7 @@
     "url": "https://github.com/madox2/react-native-responsive-stylesheet.git"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.13.2",
     "babel-preset-es2015": "^6.13.2",
     "chai": "^3.5.0",
