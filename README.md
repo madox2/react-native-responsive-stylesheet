@@ -51,7 +51,7 @@ It is responsible for definition of responsive styles.
 
 * `create(attributesToStyles: function)`
   - takes function which maps attributes to styles as argument
-  - returns factory function which creates styles
+  - returns factory function which creates styles (factory function can take one argument with additional properties)
 * `getProperties()`
   - returns properties (both base and custom properties)
 * `setExtension(extension: function)`

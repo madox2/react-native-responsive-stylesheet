@@ -156,6 +156,23 @@ describe('sheet', () => {
       })
     })
 
+    it('should create styles using component defined properties', () => {
+      const makeStyles = sheet.create(({landscape, itemCount}) => ({
+        container: {
+          flexDirection: landscape ? 'center' : 'flex-start',
+          height: itemCount * 50,
+        },
+      }))
+      makeStyles.should.be.a.function
+      const styles = makeStyles({ itemCount: 3 })
+      styles.should.eql({
+        container: {
+          flexDirection: 'flex-start',
+          height: 150,
+        },
+      })
+    })
+
   })
 
 })

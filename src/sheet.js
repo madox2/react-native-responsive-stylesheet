@@ -17,14 +17,14 @@ const make = extension => {
   /**
    * Re-compute base and custom propeties.
    */
-  const _calculateProperties = () => {
+  const _calculateProperties = componentProperties => {
     const { width, height } = Dimensions.get('window')
     const landscape = width > height
     const ratio = width / height
     const orientation = landscape ? 'landscape' : 'portrait'
     const baseProperties = { width, height, landscape, orientation, ratio }
     const customProperties = _extension(baseProperties)
-    return Object.assign({}, baseProperties, customProperties)
+    return Object.assign({}, baseProperties, customProperties, componentProperties)
   }
 
   /**
@@ -38,8 +38,8 @@ const make = extension => {
    * Factory function to create responsive styles.
    * Maps properties to styles.
    */
-  const create = attributesToStyles => () => {
-    const properties = _calculateProperties()
+  const create = attributesToStyles => (componentProperties = {}) => {
+    const properties = _calculateProperties(componentProperties)
     return attributesToStyles(properties)
   }
 
